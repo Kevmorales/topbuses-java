@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;  // definera REST
 import org.springframework.web.bind.annotation.RestController;  // definera REST API endpoints.
 import org.springframework.web.client.RestTemplate; //HTTP-begäran.
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import java.util.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api") //Grund-URL
 public class BusLineController {
@@ -76,7 +79,7 @@ public class BusLineController {
 
             return new ResponseEntity<>(sortedLines, HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace(); // This will show the error in your console
+            e.printStackTrace(); 
             return new ResponseEntity<>("Internal Server Error: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
