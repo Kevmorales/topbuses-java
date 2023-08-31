@@ -1,2 +1,4 @@
 .env
 target/
+*.class
+project_structure.txt
