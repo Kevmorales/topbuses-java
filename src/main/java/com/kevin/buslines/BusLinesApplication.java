@@ -18,7 +18,10 @@ public class BusLinesApplication implements CommandLineRunner {
     private Environment env;
 
     public static void main(String[] args) {
+        Dotenv dotenv = Dotenv.load();
+        System.setProperty("API_STOPSTWO", dotenv.get("API_STOPSTWO"));
         SpringApplication.run(BusLinesApplication.class, args);
+        System.out.println("API_STOPSTWO value: " + dotenv.get("API_STOPSTWO"));
     }
 
     @Bean
