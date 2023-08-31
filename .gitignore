@@ -2,3 +2,4 @@
 target/
 *.class
 project_structure.txt
+.vscode
